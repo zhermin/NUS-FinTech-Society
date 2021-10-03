@@ -1,0 +1,106 @@
+0. Why do you want to join FinTech Society and what skills (technical or not) do you have that you believe will contribute to the role you are applying for? 
+
+I want to join FinTech Society because I was recently exposed to the field of machine learning through a combination of my course's module, external ML hackathons as well as my upcoming industrial attachment under a ML-related role. Hence, I believe this is the best opportunity for me to not only learn new skills, but to cross-apply skills from different areas to improve myself and also contribute to this society and my job and future. 
+
+Technical skills-wise, I do have a decent amount of experience in 
+programming in general, including more data-related skills like Python's 
+Pandas from my time in my previous internship at a data science startup. 
+For ML specifically, my skills are fairly limited although I am able to 
+understand most of the technical terms used as well as some experience 
+in using popular ML libraries like pytorch due to the recent ML 
+hackathons that I had joined which provided some training materials. 
+
+All in all, I believe my passion and desire to learn despite any gaps in my knowledge will make me a great candidate for FinTech Society. 
+
+1. Why would you be a good fit for the society? You are encouraged to talk about any experience you might have in terms of algorithmic thinking, programming, and machine learning. If you do not have such experience, that is fine too. 
+
+I think my passion in programming and ML specifically can be seen by my experiences and ventures both in and outside of school. In school, under my course, I am always keen in the more programming-related modules such as in hardware programming and my recent ML introductory module, all of which I scored As in. 
+
+Outside of school, I have previously interned at a data science startup performing some simple data wrangling before outputting into data viz tools such as Power BI and Tableau. Just in June this year, I have also participated in DSTA's BRAINHACK event where they hosted 2 ML competitions alongside an app hackathon which I found to be very insightful and a great learning experience. 
+
+Although my knowledge in ML could be a little shallow since I only recently got exposed to this field, I believe I do have a broad enough understanding from both the ML module taken in my course as well as the DSTA competitions and their provided training materials to say that I would probably be a decent fit for this society. 
+
+2. 3 columns
+- hours spent doing hw
+- mins spent listening in class
+- outcome if student passes test
+
+assume first 2 columns useful in predicting if students pass or not
+elaborate on how a human (no ML) can use this table to predict whether a never-before-seen student (student "X") would pass the same test. tell us about what information would you need about student X, how your method can be carried out, and why your method works. 
+
+Assuming time spent doing homework and time spent listening in class are positively and inversely correlated respectively to a student's ability to pass the test, then naturally as a human, one would predict student X to pass the test if the former is low and the latter is high. 
+
+Fortunately, it is probably slightly easier to gather those two information in times like this with heavy online learning. 
+
+Gathering minutes spent listening in class can simply be accomplished through the watch times provided by Zoom after each class. Although this might not be fully accurate, as we cannot guarantee attentiveness during class itself, we can probably still generalise longer watch times with more information absorbed compared to a student who does not even turn up for classes. 
+
+Gathering hours spent doing homework might be a bit more challenging but perhaps one could gather the dates and times of their homework submissions with respect to a deadline such that if a student uploads their homework earlier, they are assumed to have spent less time on that particular homework and likewise, if the student submits close to or even pass the deadline, the student could be assumed to have struggled on that assignment. 
+
+Overall, this method of data collection is rather unobtrusive as they can be collected by accessing information from the services used by the students and lecturers, which will probably make the method work better compared to asking students to fill up surveys manually. 
+
+3. What is validation data and what is the difference between testing data and validation data?
+
+Validation data is a sample of data separate from the training data to be used to assess how well the model performs on new data. However, as the model is trained, the validation set is also used to tune the hyperparameters and input features such that the model will be tuned to give the best performance possible on new data. 
+
+This is different from testing data as the test set is not used at all during model training and is only used as a final unbiased test to determine the actual performance of the model on completely new data while validation data can be prone to bias and overfitting since they are used during model training and so can be used to determine early stopping. 
+
+4. Explain the concept of Backpropagation in neural networks (Be as focused in your answer as possible). 
+
+Backpropagation is an algorithm that aims to improve a model by reducing the errors calculated at the end of a forward propagation. 
+
+Starting from the input layer, through all hidden layers and finally to the output layer, each neuron will have a value (calculated by the gradient of the loss function wrt the weights and biases of the network). At the end, at the output layer, the error is calculated by comparing the actual output ("predicted" answers) with the desired output (correct answers). 
+
+The error values are then passed back from the output layer towards the input layer, while along the way, each hidden layers' weights are readjusted to decrease the error. This is repeated for how ever many epochs specified to produce an optimized model that minimizes the loss function. 
+
+5. Elaborate on the similarities and differences between gradient descent and binary search. 
+
+Similarity-wise, they are both algorithms in search of something. 
+
+In binary search (BS), it is an efficient algorithm to find an item in a sorted list of items by repeatedly splitting in half the list (and eliminating the other half) until the item is found, or not. 
+
+In gradient descent (GD), it is also an algorithm to find an item, in this case, a local minima, by iteratively calculating the gradients of the cost function and tweaking the parameters along the way to minimize it the most. 
+
+The difference is that in BS, the outcome is binary, either it is found or that the item does not exist in the list, while for GD, there is no guarantee the global minima will be found and that most of the time, it is at best the local minima since it is not possible to be aware of other minimas to even start looking for them. In fact, in GD, if the learning rate (lr), among other factors, turns out to be a suboptimal value, the local minima might not even be found or will take an extremely long time since at each step, the minima might be skipped (if the lr is too big), or never reached (if the lr is too small). 
+
+Your python script / notebook should be able to answer the following questions: 
+1. Plot time series of TSLA
+2. Find the minimum and standard deviation of closing price rounded to 3dp
+3. Create a Boolean column 'Signal' that indicates whether the price increased from the previous day. How many trading days had positive signals?
+4. Assume a naive model that predicts a positive signal on every odd date and a negative signal on every even date i.e. 21 July => odd => positive. Create a Boolean column 'Naive' to represent these predictions
+5. Calculate accuracy of the naive model mentioned above.
+
+Algorithm Challenge 1
+There is an integer array nums sorted in ascending order (with distinct values).
+
+Prior to being passed to your function, nums is rotated at an unknown pivot index k (0 <= k < len(nums)) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). 
+
+For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2].
+
+Given the array nums after the rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums.
+
+Constraints
+   a. 1 <= len(nums) <= 5000
+   b. -104 <= nums[i] <= 104
+   c. All values of nums are unique.
+   d.-104 <= target <= 104
+
+Based on the problem above, write the most efficient algorithm you can come up with (We don't want the code. we want just the algorithm to show your thought process).
+
+First scan through the array and look for the first index (i) whereby the item is smaller than the previous item. Next, get the pivot index (k) by evaluating (n-i). Lastly, check if k is smaller than nums[0] (the first item) or not. If it is smaller, do a binary search for k in the i to n-1 subarray. Else, if it is bigger, do a binary search for k in the 0 to i-1 subarray. 
+
+Algorithm Challenge 2
+We are organising a cooking competition. Participants are to cook a dish of roasted chicken rice to be presented to a panel of judges. The judges will then take turn tasting each of the participant's dish and give them a numerical score. The winner of the competition is the participant who manage to cook NOT the best chicken rice, but the 34th percentile chicken rice (because we're eccentric that way). 
+
+The head of the organising committee, Bob, says that to find the 34th percentile chicken rice, we need to sort the list of scores, and then we find the 34th percentile by going to the 34/100 * n position of the sorted list, where n is length of the list. Can you do better than Bob? 
+
+Based on the problem above, write the most efficient algorithm you can come up with (We don't want the code. we want just the algorithm to show your thought process).
+
+Bob's method will at best be O(nlogn) with the fastest sorting algorithm. 
+
+Instead, assuming the array is unsorted and randomized, use quicksort's partitioning method (without sorting) to find the (n-34/100*n)th item in the array of scores, which will be the (n-34/100*n)th largest item. This will be on average O(n) time provided the chosen pivot is not a bad pivot such as the largest/smallest item in the array. 
+
+projs
+- cv: vehicle insurance for damage claims
+- cylynx: nlp on crypto reliability based on news
+- bnpp
+- price/stock analysis
